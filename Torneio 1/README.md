@@ -2,7 +2,7 @@ Percentagens:
 
 Treino 21/22
 
-    Aloca - 
+    Aloca - 100%
 
     Apelidos - 
 
@@ -16,7 +16,7 @@ Treino 21/22
 
     ISBN -
 
-    Robot - 10%
+    Robot - 100%
     
     Horário - 
     
@@ -26,5 +26,5 @@ Treino 20/21:
 
     Fatoriza - 
     
-    Repete - 10%
+    Repete - 100%
     
