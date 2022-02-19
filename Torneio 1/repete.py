@@ -11,7 +11,7 @@ def repete(palavra,n):
     final = palavra
     final += (n-1) * palavra[maxeq:]
     
-    if n != 0:
+    if n != 0:   #Caso para 0 repeticoes (deve haver solucoes melhores)
         return final
     else:
         return ''
