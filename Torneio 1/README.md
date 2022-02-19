@@ -8,7 +8,7 @@ Treino 21/22
 
     Cruzamentos - 100%
 
-    Frequência -
+    Frequência - 100%
 
     Futebol -
 
