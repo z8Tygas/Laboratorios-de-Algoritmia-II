@@ -1,7 +1,11 @@
 Percentagens:
+
 Aloca - 
+
 Apelidos - 
+
 Cruzamentos - 
+
 Factoriza - 
 Frequência - 
 Futebol - 
