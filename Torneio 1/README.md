@@ -6,7 +6,7 @@ Treino 21/22
 
     Apelidos - 100%
 
-    Cruzamentos - 
+    Cruzamentos - 100%
 
     Frequência -
 
