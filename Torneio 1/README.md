@@ -1,21 +1,30 @@
 Percentagens:
 
-Aloca - 
+Treino 21/22
 
-Apelidos - 
+    Aloca - 
 
-Cruzamentos - 
+    Apelidos - 
 
-Factoriza -
+    Cruzamentos - 
 
-Frequência -
+    Frequência -
 
-Futebol -
+    Futebol -
 
-Hacker -
+    Hacker -
 
-ISBN -
+    ISBN -
 
-Repete - 10%
+    Robot - 10%
+    
+    Horário - 
+    
+    Formata - 
 
-Robot - 10%
+Treino 20/21:
+
+    Fatoriza - 
+    
+    Repete - 10%
+    
