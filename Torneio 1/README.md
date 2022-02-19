@@ -4,7 +4,7 @@ Treino 21/22
 
     Aloca - 100%
 
-    Apelidos - 
+    Apelidos - 100%
 
     Cruzamentos - 
 
