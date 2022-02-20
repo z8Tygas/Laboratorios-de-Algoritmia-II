@@ -18,7 +18,7 @@ Treino 21/22
 
     Robot - 100%
     
-    Horário - 60%
+    Horário - 100%
     
     Formata - 100%
 
