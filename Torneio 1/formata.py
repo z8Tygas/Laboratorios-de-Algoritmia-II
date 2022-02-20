@@ -10,29 +10,28 @@ No caso do '{' as instruções seguintes deverão também estar identadas
 
 def formata(codigo):
     ind = 0
+    i = 0
+    l = len(codigo)
     final = ""
-    lw = ''
+    newline = True
     for c in codigo:
+        i += 1
         if c == ';':
-            final += c + '\n'
-            final += ind*2*' '
-            lw = c
+            final += c + ('\n'+ind*' ')*(i<l)
+            newline = True
         elif c == '{':
-            ind += 1
-            final += c + '\n'
-            final += ind*2*' '
-            lw = c
+            ind += 2
+            final += c + ('\n'+ind*' ')*(i<l)
+            newline = True
         elif c == '}':
-            ind -= 1
             final = final[:-2]
-            final += c + '\n'
-            final += ind*2*' '
-            lw = c
-        elif c == ' ' and lw == ';':
+            ind -= 2
+            final += c + ('\n'+ind*' ')*(i<l)
+            newline = True
+        elif c == ' ' and newline:
             continue
         else:
+            newline = False
             final += c
-            lw = c
-    if lw == ';' or lw == '}':
-        final = final[:-1-ind*2]
+    
     return final
