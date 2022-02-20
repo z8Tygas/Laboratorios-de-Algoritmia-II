@@ -16,9 +16,6 @@ def calcHoras(inscr, ucs):
     horas = 0
     
     for cadeira in inscr:
-        if cadeira not in ucs.keys():
-            continue
-        else:
             horas += ucs[cadeira][2]
     return horas
 
@@ -31,7 +28,8 @@ def verifComp(inscr, ucs):
         else:
             verif.append(cadeira)
             if cadeira not in ucs.keys():
-                continue
+                possible = False
+                break
             else:
                 for cadeira2 in inscr:
                     if cadeira2 not in verif and cadeira2 in ucs.keys():
