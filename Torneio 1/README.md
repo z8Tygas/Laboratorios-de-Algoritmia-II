@@ -14,7 +14,7 @@ Treino 21/22
 
     Hacker - 100%
 
-    ISBN -
+    ISBN - 100%
 
     Robot - 100%
     
