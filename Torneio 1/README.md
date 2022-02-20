@@ -12,7 +12,7 @@ Treino 21/22
 
     Futebol - 100%
 
-    Hacker -
+    Hacker - 100%
 
     ISBN -
 
