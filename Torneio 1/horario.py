@@ -23,27 +23,28 @@ def verifComp(inscr, ucs):
     possible = True
     verif = []
     for cadeira in inscr:
-        if not possible:
+        if not possible:                #tentar max eficiencia
             break
         else:
-            verif.append(cadeira)
+            verif.append(cadeira)       #tentar max eficiencia
             if cadeira not in ucs.keys():
                 possible = False
                 break
             else:
-                for cadeira2 in inscr:
-                    if cadeira2 not in verif and cadeira2 in ucs.keys():
+                for cadeira2 in inscr:  #testa compatibilidade cadeira a cadeira
+                    if cadeira2 not in ucs.keys():
+                        possible = False
+                        break
+                    if cadeira2 not in verif:  #tentar max eficiencia
                         if ucs[cadeira][0] == ucs[cadeira2][0]: # Mesmo Dia
+                            #UC2 acaba antes de UC ou comeca depois
                             if (ucs[cadeira2][1] + ucs[cadeira2][2] <= ucs[cadeira][1]) or (ucs[cadeira][1] + ucs[cadeira][2] <= ucs[cadeira2][1]):
                                 verif.append(cadeira2)
                                 continue
                             else:
                                 possible = False
                                 break
-                        else:
-                            continue
-                    else:
-                        continue
+                                
     return possible
 
 def horario(ucs,alunos):
@@ -52,7 +53,6 @@ def horario(ucs,alunos):
     for num, inscr in alunos.items():
         if verifComp(inscr, ucs):
             alunosValidos.append((num, calcHoras(inscr, ucs)))
-        else:
-            continue
+            
     alunosValidos.sort(key = lambda x: (-x[1],x[0]))
     return alunosValidos
