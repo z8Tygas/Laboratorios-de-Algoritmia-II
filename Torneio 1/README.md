@@ -20,7 +20,7 @@ Treino 21/22
     
     Horário - 
     
-    Formata - 
+    Formata - 40%
 
 Treino 20/21:
 
