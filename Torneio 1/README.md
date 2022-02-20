@@ -10,7 +10,7 @@ Treino 21/22
 
     Frequência - 100%
 
-    Futebol -
+    Futebol - 100%
 
     Hacker -
 
