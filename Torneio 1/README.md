@@ -24,7 +24,7 @@ Treino 21/22
 
 Treino 20/21:
 
-    Fatoriza - 
+    Fatoriza - 100%
     
     Repete - 100%
     
