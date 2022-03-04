@@ -27,7 +27,6 @@ def area(p,mapa):
                         if (x+i,y+k) not in vis:
                             if y + k >= 0 and y + k < len(mapa) and x + i >= 0 and x + i < len(mapa):
                                 if mapa[y+k][x+i] == '.':
-                                    print("add", x+i,y+k )
                                     vis.add((x+i,y+k))
                                     area += 1
                                     queue.append((x+i,y+k))
