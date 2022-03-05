@@ -9,3 +9,5 @@ Treino 20/21
     cidade - 100%
 
     contintente - 100%
+
+    erdos - 80%
