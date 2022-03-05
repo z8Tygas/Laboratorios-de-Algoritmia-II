@@ -40,9 +40,6 @@ def bfs(adj, o):
 
 def erdos(artigos,n):
     adj = build(artigos)
-    if "Paul Erdos" not in adj:
-        return []
-
     dictAutores = bfs(adj, "Paul Erdos")
     final = [ x for x, y in sorted(dictAutores.items(), key = lambda x: (x[1], x[0])) if y <= n ]
     
