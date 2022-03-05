@@ -1,4 +1,4 @@
 Percentagens:
 
     area - 13%
-    cavalot -13%
+    cavalo -13%
