@@ -25,6 +25,17 @@ def build(vizinhos):
 #    Also possible with DFS    #
 ################################
 
+def dfs(adj,o):
+    return dfs_aux(adj,o,set())
+
+def dfs_aux(adj,o,vis):
+    vis.add(o)
+    for d in adj[o]:
+        if d not in vis:
+            dfs_aux(adj,d,vis)
+    return vis
+################################
+
 def bfs(adj,o):
     vis = {o}
     queue = [o]
