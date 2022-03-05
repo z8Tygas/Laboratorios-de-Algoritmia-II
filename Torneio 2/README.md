@@ -7,3 +7,5 @@ Treino 20/21
     cavalo - 100%
     
     cidade - 100%
+
+    contintente - 100%
