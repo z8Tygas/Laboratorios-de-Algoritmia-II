@@ -6,4 +6,4 @@ Treino 20/21
     
     cavalo - 13%
     
-    cidade - 135
+    cidade - 13%
