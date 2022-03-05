@@ -2,8 +2,8 @@ Percentagens:
 
 Treino 20/21
 
-    area - 13%
+    area - 100%
     
-    cavalo - 13%
+    cavalo - 100%
     
-    cidade - 13%
+    cidade - 100%
