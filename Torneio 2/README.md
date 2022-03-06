@@ -11,3 +11,5 @@ Treino 20/21
     contintente - 100%
 
     erdos - 80%
+
+    labirinto - 100%
