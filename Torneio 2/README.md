@@ -13,3 +13,5 @@ Treino 20/21
     erdos - 80%
 
     labirinto - 100%
+    
+    travessia - 60%
