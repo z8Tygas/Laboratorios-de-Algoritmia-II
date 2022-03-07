@@ -35,3 +35,41 @@ def formata(codigo):
             final += c
     
     return final
+
+##############################
+#    Solucao Alternativa     #
+##############################
+
+def formata(codigo):
+    newline = True
+    tab = 0
+    final = ""
+    for c in codigo:
+        if newline and c == " ":
+            continue
+        elif c == '{':
+            if newline:
+                final += ' '*tab
+            final += c +'\n'
+            tab += 2
+            newline = True
+        elif c == '}':
+            tab -= 2
+            if newline:
+                final += ' '*tab
+            final += c +'\n'
+            newline = True
+        elif c == ';':
+            if newline:
+                final += ' '*tab
+            final += c +'\n'
+            newline = True
+        else:
+            if newline:
+                final += ' '*tab
+            final += c
+            newline = False
+
+    if newline:
+        final = final[:-1]
+    return final
