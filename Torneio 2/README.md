@@ -15,3 +15,5 @@ Treino 20/21
     labirinto - 100%
     
     travessia - 60%
+
+    vaigem - 100%
