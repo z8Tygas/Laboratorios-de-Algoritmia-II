@@ -11,20 +11,22 @@ Assuma que cada rota funciona nos dois sentidos.
 def build(rotas):
     adj = {}
     for rota in rotas:
-        for i in range(0, len(rota), 2):
-            if i + 2 < len(rota):
-                o = rota[i]
-                p = rota[i+1]
-                d = rota[i+2]
-                if o not in adj:
-                    adj[o] = {}
-                if d not in adj:
-                    adj[d] = {}
-                adj[o][d] = p
-                adj[d][o] = p
+        for i in range(0, len(rota)-2, 2):
+            cid1 = rota[i]
+            custo = rota[i+1]
+            cid2 = rota[i+2]
+            if cid1 not in adj:
+                adj[cid1] = {}
+            if cid2 not in adj:
+                adj[cid2] = {}
+            adj[cid1][cid2] = custo
+            adj[cid2][cid1] = custo
 
     return adj
 
+###############################
+#     Dijkstra Version        #
+###############################
 
 def dijkstra(adj,o):
  pai = {}
@@ -56,3 +58,33 @@ def viagem(rotas,o,d):
         o = pai[o]
 
     return custo
+
+
+####################################
+#     Floyd-Warshal Version        #
+####################################
+
+def fw(adj):
+    dist = {}
+    for o in adj:
+        dist[o] = {}
+        for d in adj:
+            if o == d:
+                dist[o][d] = 0
+            elif d in adj[o]:
+                dist[o][d] = adj[o][d]
+            else:
+                dist[o][d] = float("inf")
+    for k in adj:
+        for o in adj:
+            for d in adj:
+                if dist[o][k] + dist[k][d] < dist[o][d]:
+                    dist[o][d] = dist[o][k] + dist[k][d]
+    return dist
+
+def viagem(rotas,o,d):
+    adj = build(rotas)
+    if not len(adj):
+        return 0
+    dists = fw(adj)
+    return dists[o][d]
