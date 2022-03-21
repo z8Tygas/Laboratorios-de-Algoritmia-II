@@ -23,12 +23,64 @@ def area(p,mapa):
             x,y = queue.pop(0)
             for i in [-1,0,1]:
                 for k in [-1,0,1]:
-                    if abs(i)+abs(k)-2:
-                        if (x+i,y+k) not in vis:
-                            if y + k >= 0 and y + k < len(mapa) and x + i >= 0 and x + i < len(mapa):
-                                if mapa[y+k][x+i] == '.':
-                                    vis.add((x+i,y+k))
-                                    area += 1
-                                    queue.append((x+i,y+k))
+                    if not abs(i)+abs(k)-2:
+                        continue
+                    if (x+i,y+k) in vis:
+                        continue
+                    if y + k >= 0 and y + k < len(mapa) and x + i >= 0 and x + i < len(mapa):
+                        if mapa[y+k][x+i] == '*':
+                            continue
+                        vis.add((x+i,y+k))
+                        area += 1
+                        queue.append((x+i,y+k))
 
         return area
+    
+#############################################
+#  Approach usando algoritmos de travessia  #
+#############################################
+
+def build(mapa):
+    adj = {}
+    length = len(mapa)
+    width = len(mapa[0])
+    for y in range(length):
+        for x in range(width):
+            if mapa[y][x] == '*':
+                continue
+            elif (x, y) not in adj:
+                adj[(x, y)] = set()
+            for i in [-1, 0, 1]:
+                for j in [-1, 0, 1]:
+                    if abs(i) + abs(j) == 2:
+                        continue
+                    if not 0 <= x+i < width:
+                        continue
+                    if not 0 <= y+j < length:
+                        continue
+                    if mapa[y+j][x+i] == '*':
+                        continue
+                    if (x+i, y+j) not in adj:
+                        adj[(x+i, y+j)] = set()
+                    
+                    adj[(x, y)].add((x+i, y+j))
+                    adj[(x+i, y+j)].add((x, y))
+    return adj
+
+def bfs(adj,o):
+    custo = 0
+    vis = {o}
+    queue = [o]
+    while queue:
+        v = queue.pop(0)
+        for d in adj[v]:
+            if d not in vis:
+                vis.add(d)
+                custo += 1
+                queue.append(d)
+    return custo
+
+def area(p,mapa):
+    adj = build(mapa)
+    custo = bfs(adj, p)
+    return (custo, custo+1) [mapa[p[1]][p[0]] == '.' ]
