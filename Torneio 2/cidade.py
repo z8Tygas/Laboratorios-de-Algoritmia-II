@@ -15,17 +15,17 @@ def build(ruas):
     adj = {}
 
     for rua in ruas:
-        if rua[0] in adj.keys() and rua[-1] in adj[rua[0]].keys():
-            if adj[rua[0]][rua[-1]] > len(rua):
-                adj[rua[0]][rua[-1]] = len(rua)
-                adj[rua[-1]][rua[0]] = len(rua)
-        else:
-            if rua[0] not in adj:
-                adj[rua[0]] = {}
-            if rua[-1] not in adj:
-                adj[rua[-1]] = {}
-            adj[rua[0]][rua[-1]] = len(rua)
-            adj[rua[-1]][rua[0]] = len(rua)
+        c1 = rua[0]
+        c2 = rua[-1]
+        if c1 not in adj:
+            adj[c1] = {}
+        if c2 not in adj:
+            adj[c2] = {}
+        if c2 in adj[c1] and adj[c1][c2] < len(rua):
+            continue
+        adj[c1][c2] = len(rua)
+        adj[c2][c1] = len(rua)
+
     return adj
   
 
@@ -92,10 +92,9 @@ def fw(adj):
 
 def tamanho(ruas):
     adj = build(ruas)
-    dist = 0
     dist = fw(adj)
-    maxdist = 0
-    for cruz in adj:
-        for cruzd in adj:
-            maxdist = max(maxdist, dist[cruz][cruzd])
-    return maxdist
+    final = 0
+    for i in adj:
+        for k in adj:
+            final = max(final, dist[i][k])
+    return final
