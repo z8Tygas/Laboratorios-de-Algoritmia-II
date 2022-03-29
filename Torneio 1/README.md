@@ -1,5 +1,11 @@
 Percentagens:
 
+Torneio 21/22:
+
+    formula1 - 100%
+    
+    diferentes - 100%
+
 Treino 21/22
 
     Aloca - 100%
