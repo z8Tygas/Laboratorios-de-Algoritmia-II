@@ -9,4 +9,5 @@ Treino 20/21
     
 Torneio 21/22
     
-    
+    binario - 100%
+    filtra - 50%
